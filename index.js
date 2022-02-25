@@ -4,7 +4,7 @@ function scotts() {
     return console.log(false);
   } else return console.log(true);
 }
-
+const taco = ""
 let tacos = ["hello", "yo", "taco", "dog"];
 
 function taco() {
