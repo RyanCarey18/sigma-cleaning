@@ -1,9 +1,11 @@
 const { Schema, model } = require("mongoose");
-const profileSchema = require("./User");
+
+const userSchema = require("./User");
+
 const serviceSchema = require("./Service");
 
 const BookingSchema = new Schema({
-  profile: [profileSchema],
+  user: userSchema,
   time: {
     type: String,
     required: true,
