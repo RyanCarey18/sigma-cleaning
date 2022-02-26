@@ -48,6 +48,6 @@ profileSchema.virtual("bookingCount").get(function () {
   return this.bookings.length;
 });
 
-const Profile = model("Profile", profileSchema);
+const Profile = model("User", profileSchema);
 
 module.exports = Profile;
