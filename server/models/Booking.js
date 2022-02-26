@@ -5,7 +5,7 @@ const serviceSchema = require("./Service");
 const BookingSchema = new Schema({
   user: userSchema,
   time: {
-    type: Date(),
+    type: String,
     required: true,
   },
   service: [serviceSchema],
