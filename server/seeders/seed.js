@@ -4,6 +4,7 @@ const profileSeeds = require("./profileSeeds.json");
 const { Service } = require("../models");
 const serviceSeeds = require("./serviceSeeds.json");
 
+
 db.once("open", async () => {
   try {
     await User.deleteMany({});
