@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const profileSchema = require("./User");
-const serviceSchema = require("./Service");
+const Service = require("./Service");
 
 const BookingSchema = new Schema({
   profile: [profileSchema],
@@ -8,7 +8,12 @@ const BookingSchema = new Schema({
     type: String,
     required: true,
   },
-  service: [serviceSchema],
+  service: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Service",
+    },
+  ],
 });
 
 module.exports = BookingSchema;
