@@ -36,7 +36,7 @@ export const LOGIN_USER = gql`
 
 export const ADD_BOOKING = gql`
   mutation addBooking($userId: ID!, $time: String!, $serviceId: ID!) {
-    addBooking(userId: $userId, time:$time: $serviceId) {
+    addBooking(userId: $userId, time: $time, serviceId: $serviceId) {
       _id
       name
       booking
@@ -46,7 +46,7 @@ export const ADD_BOOKING = gql`
 
 export const REMOVE_BOOKING = gql`
   mutation removeBooking($booking: String!) {
-    removeSkill(booking: $booking) {
+    removeBooking(booking: $booking) {
       _id
       name
       booking

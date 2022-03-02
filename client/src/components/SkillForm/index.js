@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 
-import { ADD_SKILL } from '../../utils/mutations';
+//import { ADD_SKILL } from '../../utils/mutations';
 
-import Auth from '../../utils/auth';
+import Auth from "../../utils/auth";
 
 const SkillForm = ({ profileId }) => {
-  const [skill, setSkill] = useState('');
+  const [skill, setSkill] = useState("");
 
-  const [addSkill, { error }] = useMutation(ADD_SKILL);
+  //  const [addSkill, { error }] = useMutation(ADD_SKILL);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const data = await addSkill({
-        variables: { profileId, skill },
-      });
-
-      setSkill('');
+      //      const data = await addSkill({
+      //        variables: { profileId, skill },
+      //      });
+      //      setSkill("");
     } catch (err) {
       console.error(err);
     }
@@ -48,15 +47,15 @@ const SkillForm = ({ profileId }) => {
               Endorse Skill
             </button>
           </div>
-          {error && (
+          {/* {error && (
             <div className="col-12 my-3 bg-danger text-white p-3">
               {error.message}
             </div>
-          )}
+          )} */}
         </form>
       ) : (
         <p>
-          You need to be logged in to endorse skills. Please{' '}
+          You need to be logged in to endorse skills. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

@@ -24,7 +24,6 @@ const userSchema = new Schema({
 
   address: {
     type: String,
-    required: true,
   },
   bookings: [
     {
