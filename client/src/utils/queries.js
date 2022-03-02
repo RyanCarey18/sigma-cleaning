@@ -13,6 +13,7 @@ export const QUERY_ME = gql`
 export const QUERY_SERVICES = gql`
   query allServices {
     services {
+      _id
       name
       description
       length

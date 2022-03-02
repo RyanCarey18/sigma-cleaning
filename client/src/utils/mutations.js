@@ -35,11 +35,23 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_BOOKING = gql`
-  mutation addBooking($userId: ID!, $time: String!, $serviceId: ID!) {
-    addBooking(userId: $userId, time: $time, serviceId: $serviceId) {
+  mutation addBooking(
+    $client: String!
+    $email: String!
+    $phone: String!
+    $date: String!
+    $time: String!
+    $service: ID!
+  ) {
+    addBooking(
+      client: $client
+      email: $email
+      phone: $phone
+      date: $date
+      time: $time
+      service: $service
+    ) {
       _id
-      name
-      booking
     }
   }
 `;

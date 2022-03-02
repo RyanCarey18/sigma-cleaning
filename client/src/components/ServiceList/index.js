@@ -20,7 +20,7 @@ const ServiceList = ({ services, title }) => {
 
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
-                  to={`/profiles/${service._id}`}
+                  to={`/services/${service._id}`}
                 >
                   Select this service.
                 </Link>

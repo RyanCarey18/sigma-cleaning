@@ -49,27 +49,24 @@ const resolvers = {
       return { token, user };
     },
 
-    // /////
-    // //THIS NEEDS CHANGING
-    // /////
-    // // Add a third argument to the resolver to access data in our `context`
-    // addBooking: async (parent, { profileId, skill }, context) => {
-    //   // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-    //   if (context.user) {
-    //     return Profile.findOneAndUpdate(
-    //       { _id: profileId },
-    //       {
-    //         $addToSet: { skills: skill },
-    //       },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       }
-    //     );
-    //   }
-    //   // If user attempts to execute this mutation and isn't logged in, throw an error
-    //   throw new AuthenticationError("You need to be logged in!");
-    // },
+    /////
+    //THIS NEEDS CHANGING
+    /////
+    // Add a third argument to the resolver to access data in our `context`
+    addBooking: async (
+      parent,
+      { client, email, phone, date, time, service }
+    ) => {
+      const booking = await Booking.create({
+        client,
+        email,
+        phone,
+        date,
+        time,
+        service,
+      });
+      return booking._id;
+    },
     // // Set up mutation so a logged in user can only remove their profile and no one else's
 
     // //////
