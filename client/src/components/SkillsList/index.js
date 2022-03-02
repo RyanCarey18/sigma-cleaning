@@ -1,31 +1,31 @@
-import React from 'react';
-import { useMutation } from '@apollo/client';
+import React from "react";
+import { useMutation } from "@apollo/client";
 
-import { REMOVE_SKILL } from '../../utils/mutations';
-import { QUERY_ME } from '../../utils/queries';
+//import { REMOVE_SKILL } from '../../utils/mutations';
+import { QUERY_ME } from "../../utils/queries";
 
 const SkillsList = ({ skills, isLoggedInUser = false }) => {
-  const [removeSkill, { error }] = useMutation(REMOVE_SKILL, {
-    update(cache, { data: { removeSkill } }) {
-      try {
-        cache.writeQuery({
-          query: QUERY_ME,
-          data: { me: removeSkill },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
+  //  const [removeSkill, { error }] = useMutation(REMOVE_SKILL, {
+  // update(cache, { data: { removeSkill } }) {
+  //   try {
+  //     cache.writeQuery({
+  //       query: QUERY_ME,
+  //       data: { me: removeSkill },
+  //     });
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
+  // },
+  //});
 
   const handleRemoveSkill = async (skill) => {
-    try {
-      const { data } = await removeSkill({
-        variables: { skill },
-      });
-    } catch (err) {
-      console.error(err);
-    }
+    // try {
+    // //   const { data } = await removeSkill({
+    // //     variables: { skill },
+    // //   });
+    // // } catch (err) {
+    //   console.error(err);
+    // }
   };
 
   if (!skills.length) {
@@ -54,9 +54,9 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
             </div>
           ))}
       </div>
-      {error && (
+      {/* {error && (
         <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-      )}
+      )} */}
     </div>
   );
 };
