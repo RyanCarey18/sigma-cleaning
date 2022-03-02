@@ -22,16 +22,6 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_SKILL = gql`
-  mutation addSkill($profileId: ID!, $skill: String!) {
-    addSkill(profileId: $profileId, skill: $skill) {
-      _id
-      name
-      skills
-    }
-  }
-`;
-
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -44,12 +34,22 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const REMOVE_SKILL = gql`
-  mutation removeSkill($skill: String!) {
-    removeSkill(skill: $skill) {
+export const ADD_BOOKING = gql`
+  mutation addBooking($userId: ID!, $time: String!, $serviceId: ID!) {
+    addBooking(userId: $userId, time:$time: $serviceId) {
       _id
       name
-      skills
+      booking
+    }
+  }
+`;
+
+export const REMOVE_BOOKING = gql`
+  mutation removeBooking($booking: String!) {
+    removeSkill(booking: $booking) {
+      _id
+      name
+      booking
     }
   }
 `;
