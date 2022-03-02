@@ -26,7 +26,12 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  bookings: [bookingSchema],
+  bookings: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Booking",
+    },
+  ],
 });
 
 // set up pre-save middleware to create password
