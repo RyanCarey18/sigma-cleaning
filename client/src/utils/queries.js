@@ -9,3 +9,13 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_SERVICES = gql`
+  query allServices {
+    services {
+      name
+      description
+      length
+    }
+  }
+`;

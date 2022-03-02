@@ -20,6 +20,7 @@ const typeDefs = gql`
   }
   type Query {
     me: User
+    services: [Service]
   }
   type Mutation {
     addUser(
@@ -30,12 +31,12 @@ const typeDefs = gql`
     ): Auth
     login(email: String!, password: String!): Auth
   }
+  type Service {
+    name: String!
+    description: String
+    length: String
+  }
 `;
-//   type Service {
-//     name: String!
-//     description: String
-//     length: String
-//   }
 
 //   type Booking {
 //     _Id: ID!

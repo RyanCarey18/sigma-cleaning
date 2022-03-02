@@ -7,9 +7,9 @@ const resolvers = {
     //////
     //THIS QUERY NEEDS CHANGING, name correct return not
     // //////
-    // services: async () => {
-    //   return User.find();
-    // },
+    services: async () => {
+      return Service.find();
+    },
     // //////
     // //THIS NEEDS TO BE CHANGED, name correct return not
     // //////
