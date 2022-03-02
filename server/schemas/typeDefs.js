@@ -8,20 +8,41 @@ const typeDefs = gql`
     password: String
     address: String
   }
+
+  type Booking {
+    _id: ID!
+    client: String!
+    email: String!
+    phone: String!
+    date: String!
+    time: String!
+    service: Service
+  }
+
+  type Service {
+    _id: ID!
+    name: String!
+    description: String
+    length: String
+  }
+
   input UserInput {
     name: String!
     email: String!
     password: String
     address: String
   }
+
   type Auth {
     token: ID!
     user: User
   }
+
   type Query {
     me: User
     services: [Service]
   }
+
   type Mutation {
     addUser(
       name: String!
@@ -30,20 +51,16 @@ const typeDefs = gql`
       address: String!
     ): Auth
     login(email: String!, password: String!): Auth
-  }
-  type Service {
-    name: String!
-    description: String
-    length: String
+    addBooking(
+      client: String!
+      email: String!
+      phone: String!
+      date: String!
+      time: String!
+      service: ID!
+    ): Booking
   }
 `;
-
-//   type Booking {
-//     _Id: ID!
-//     user: User
-//     time: String!
-//     service: Service
-//   }
 
 //   input savedBookings {
 //     _Id: ID!

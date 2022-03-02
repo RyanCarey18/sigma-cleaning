@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
-//import { ADD_SKILL } from '../../utils/mutations';
+import { ADD_BOOKING } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
-const SkillForm = ({ profileId }) => {
-  const [skill, setSkill] = useState("");
+const BookingForm = ({ profileId }) => {
+  const [booking, setBooking] = useState({});
 
-  //  const [addSkill, { error }] = useMutation(ADD_SKILL);
+  const [addBooking, { error }] = useMutation(ADD_BOOKING);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      //      const data = await addSkill({
-      //        variables: { profileId, skill },
-      //      });
-      //      setSkill("");
+      const data = await addBooking({
+        variables: { profileId, booking },
+      });
+      setBooking("");
     } catch (err) {
       console.error(err);
     }
@@ -36,9 +36,9 @@ const SkillForm = ({ profileId }) => {
           <div className="col-12 col-lg-9">
             <input
               placeholder="Endorse some skills..."
-              value={skill}
+              value={booking}
               className="form-input w-100"
-              onChange={(event) => setSkill(event.target.value)}
+              onChange={(event) => setBooking(event.target.value)}
             />
           </div>
 
@@ -47,11 +47,11 @@ const SkillForm = ({ profileId }) => {
               Endorse Skill
             </button>
           </div>
-          {/* {error && (
+          {error && (
             <div className="col-12 my-3 bg-danger text-white p-3">
               {error.message}
             </div>
-          )} */}
+          )}
         </form>
       ) : (
         <p>
@@ -63,4 +63,4 @@ const SkillForm = ({ profileId }) => {
   );
 };
 
-export default SkillForm;
+export default BookingForm;
