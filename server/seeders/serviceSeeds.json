@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Fifteen Minute Clean",
+        "description": "A cleaning that lasts fifteen minutes",
+        "length": "Fifteen Mintutes" 
+    },
+    {
+        "name": "Thirty Minute Clean",
+        "description": "A cleaning that lasts thirty mintutes",
+        "length": "Thirty Minutes"
+    },
+    {
+        "name": "Fourty-Five Minute Clean",
+        "description": "A cleaning that lasts fourty-five minutes",
+        "length": "Fourty-five Minutes"
+    },
+    {
+        "name": "Hour Clean",
+        "description": "A cleaning that lasts an hour",
+        "length": "One Hour"
+    }
+]
