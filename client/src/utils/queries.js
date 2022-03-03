@@ -5,7 +5,6 @@ export const QUERY_ME = gql`
     me {
       _id
       name
-      skills
     }
   }
 `;
@@ -17,6 +16,24 @@ export const QUERY_SERVICES = gql`
       name
       description
       length
+    }
+  }
+`;
+
+export const QUERY_SINGLE_USER = gql`
+  query singleUser($userId: ID!) {
+    user(userId: $userId) {
+      name
+      _id
+    }
+  }
+`;
+
+export const QUERY_BOOKINGS = gql`
+  query singleUser($userId: ID!) {
+    user(userId: $userId) {
+      name
+      _id
     }
   }
 `;
