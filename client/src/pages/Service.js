@@ -45,7 +45,7 @@ const Book = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">
+          <h4 className="card-header text-light p-2">
             Sign Up for a Cleaning
           </h4>
           <div className="card-body">
@@ -107,7 +107,7 @@ const Book = () => {
                   <option value="4">4PM</option>
                 </select>
                 <button
-                  className="btn btn-block btn-info"
+                  className="btn btn-block btn-light text-dark"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >

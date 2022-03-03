@@ -3,22 +3,20 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
   return (
-    <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
-      <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-        <Link className="text-dark" to="/">
+    <header className="bg-clean-blue text-light mb-4 py-3 display-flex align-center">
+      <div className="container flex-column justify-space-between-lg justify-center align-start text-center">
+        <Link className="text-light" to="/">
           <h1 className="m-0" style={{ fontSize: '3rem' }}>
-            Tech Friends
+            Business Cleaning
           </h1>
         </Link>
-        <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Meet your new programming pals.
-        </p>
         <div>
           {Auth.loggedIn() ? (
             <>
@@ -41,7 +39,16 @@ const Header = () => {
           )}
         </div>
       </div>
+      <div className="container flex-row justify-space-around align-end text-center">
+          <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
+           Call us at: (555)-555-5555
+          </p>
+          <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
+           Email us at: Business@gmail.com
+          </p>
+      </div>
     </header>
+    
   );
 };
 

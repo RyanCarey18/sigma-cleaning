@@ -404,7 +404,13 @@ p {
   line-height: 1.5;
 }
 
-ul,
+ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  font-size: larger;
+  font-family: 'JetBrains Mono', monospace;
+}
 ol,
 dl {
   margin-top: 0;
@@ -429,7 +435,7 @@ a {
 
 a:hover {
   color: #065b83;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* HEIGHT / WIDTH UTILS */
@@ -951,6 +957,10 @@ a:hover {
   background-color: #1b89bc !important;
 }
 
+.bg-clean-blue {
+  background-color:dodgerblue;
+}
+
 /* DISPLAY */
 .display-none {
   display: none !important;
@@ -1083,8 +1093,13 @@ a:hover {
   background-color: #31a9e1;
 }
 
+.btn-clean {
+  background-color: #2d3e50;
+}
+
 .card {
-  border: 1px solid #1a1a1a;
+  border: 2px solid #1a1a1a;
+  border-style: groove;
   margin-bottom: 1rem;
 }
 

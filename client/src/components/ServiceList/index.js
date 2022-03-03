@@ -14,7 +14,7 @@ const ServiceList = ({ services, title }) => {
           services.map((service) => (
             <div key={service._id} className="col-12 col-xl-6">
               <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0">
+                <h4 className="card-header text-light p-2 m-0">
                   {service.name} <br />
                 </h4>
 
