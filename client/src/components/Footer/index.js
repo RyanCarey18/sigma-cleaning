@@ -9,13 +9,13 @@ const Footer = () => {
       <div className="container text-center mb-5">
         {location.pathname !== '/' && (
           <button
-            className="btn btn-dark mb-3"
+            className="btn btn-clean text-white mb-3"
             onClick={() => history.goBack()}
           >
             &larr; Go Back
           </button>
         )}
-        <h4>&copy; {new Date().getFullYear()} - Tech Friends</h4>
+        <h4>&copy; {new Date().getFullYear()} - Business Bois</h4>
       </div>
     </footer>
   );
