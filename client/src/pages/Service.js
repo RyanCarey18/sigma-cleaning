@@ -13,6 +13,7 @@ const Book = () => {
     phone: "",
     date: "",
     time: "",
+    unix: "",
     service: serviceId,
   });
   const [addBooking, { error, data }] = useMutation(ADD_BOOKING);
@@ -23,6 +24,16 @@ const Book = () => {
 
     setFormState({
       ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleDateChange = (event) => {
+    const { name, value } = event.target;
+    const unixValue = new Date(value).getTime() / 1000;
+    setFormState({
+      ...formState,
+      ["unix"]: unixValue,
       [name]: value,
     });
   };
@@ -45,9 +56,7 @@ const Book = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header text-light p-2">
-            Sign Up for a Cleaning
-          </h4>
+          <h4 className="card-header text-light p-2">Sign Up for a Cleaning</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -72,6 +81,7 @@ const Book = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <label htmlFor="phone">Phone # in format: 123-456-7890</label>
                 <input
                   className="form-input"
                   placeholder="123-456-7890"
@@ -81,13 +91,15 @@ const Book = () => {
                   value={formState.phone}
                   onChange={handleChange}
                 />
+                <label htmlFor="date">Choose a date:</label>
                 <input
                   className="form-input"
                   label="Date:"
                   name="date"
                   type="date"
+                  min={new Date().toISOString().slice(0, 10)}
                   value={formState.date}
-                  onChange={handleChange}
+                  onChange={handleDateChange}
                 />
                 <label htmlFor="time">Choose a time:</label>
                 <select
@@ -96,15 +108,15 @@ const Book = () => {
                   value={formState.time}
                   className="form-input"
                 >
-                  <option value="8">8 AM</option>
-                  <option value="9">9 AM</option>
-                  <option value="10">10 AM</option>
-                  <option value="11">11 AM</option>
-                  <option value="12">12 PM</option>
-                  <option value="1">1PM</option>
-                  <option value="2">2PM</option>
-                  <option value="3">3PM</option>
-                  <option value="4">4PM</option>
+                  <option value="8:00 AM">8 AM</option>
+                  <option value="9:00 AM">9 AM</option>
+                  <option value="10:00 AM">10 AM</option>
+                  <option value="11:00 AM">11 AM</option>
+                  <option value="12:00 PM">12 PM</option>
+                  <option value="1:00 PM">1PM</option>
+                  <option value="2:00 PM">2PM</option>
+                  <option value="3:00 PM">3PM</option>
+                  <option value="4:00 PM">4PM</option>
                 </select>
                 <button
                   className="btn btn-block btn-light text-dark"

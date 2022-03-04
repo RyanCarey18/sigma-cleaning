@@ -21,6 +21,10 @@ const bookingSchema = new Schema({
     type: String,
     required: true,
   },
+  unix: {
+    type: Number,
+    required: true,
+  },
   service: {
     type: Schema.Types.ObjectId,
     ref: "Service",
