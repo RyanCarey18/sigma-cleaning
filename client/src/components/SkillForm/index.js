@@ -26,7 +26,7 @@ const BookingForm = ({ profileId }) => {
 
   return (
     <div>
-      <h4>Endorse some more skills below.</h4>
+      <h4>Your past Appointments.</h4>
 
       {Auth.loggedIn() ? (
         <form
@@ -55,7 +55,7 @@ const BookingForm = ({ profileId }) => {
         </form>
       ) : (
         <p>
-          You need to be logged in to endorse skills. Please{" "}
+          You need to be logged in to shedule an appointment. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

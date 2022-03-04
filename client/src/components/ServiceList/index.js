@@ -14,12 +14,15 @@ const ServiceList = ({ services, title }) => {
           services.map((service) => (
             <div key={service._id} className="col-12 col-xl-6">
               <div className="card mb-3">
-                <h4 className="card-header text-light p-2 m-0">
+                <h3 className="card-header text-light p-2 m-0">
                   {service.name} <br />
+                </h3>
+                <h4 className="card-header text-light p-2 m-0">
+                {service.description} <br />
                 </h4>
 
                 <Link
-                  className="btn btn-block btn-squared btn-light text-dark"
+                  className="btn btn-block btn-squared btn-light  text-dark"
                   to={`/services/${service._id}`}
                 >
                   Select this service.
