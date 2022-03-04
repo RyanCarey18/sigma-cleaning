@@ -16,16 +16,16 @@ const Home = () => {
        <div className="flex-row justify-center">
         <div className="col-12 col-md-10 my-3 text-center">
           <h3>
-          Business Cleaning® has been providing the world with cleaning services since 2022.
+          Sigma Cleaning® has been providing the world with cleaning services since 2022.
           We offer groundbreaking methods in the world of cleaning with trained personnel that give our customers peace of mind.
           </h3>
           </div>
           
           <img src= {logo} alt="clean" />
-
+          
           <div className="col-12 col-md-10 my-3 text-center">
           <h3>
-          When you trust Business Cleaning®, you can count on:
+          When you trust Sigma Cleaning®, you can count on:
           </h3>
           <ul>
             <li>0 Years of Experience</li>
