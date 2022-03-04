@@ -12,20 +12,23 @@ const Home = () => {
 
   return (
     <main>
-      <div className="flex-row justify-center">
+      <div className="flex-row justify-center ">
         <div className="col-12 col-md-10 my-3 text-center">
           <h3>
-            Business Cleaning® has been providing the world with cleaning
-            services since 2022. We offer groundbreaking methods in the world of
-            cleaning with trained personnel that give our customers peace of
-            mind.
+            Sigma Cleaning® has been providing the world with cleaning services
+            since 2022. We offer groundbreaking methods in the world of cleaning
+            with trained personnel that give our customers peace of mind.
+          </h3>
+          <h3>
+            Sigma (Σ) is the greek numeral for 200, just like how you will be
+            200% satisfied with Sigma Cleaning® Guaranteed.
           </h3>
         </div>
 
         <img src={logo} alt="clean" />
 
         <div className="col-12 col-md-10 my-3 text-center">
-          <h3>When you trust Business Cleaning®, you can count on:</h3>
+          <h3>When you trust Sigma Cleaning®, you can count on:</h3>
           <ul>
             <li>0 Years of Experience</li>
             <li>Guaranteed Satisfaction</li>

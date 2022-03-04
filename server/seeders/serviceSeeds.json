@@ -1,22 +1,22 @@
 [
     {
-        "name": "Fifteen Minute Clean",
-        "description": "A cleaning that lasts fifteen minutes",
-        "length": "Fifteen Mintutes" 
+        "name": "Basic Clean",
+        "description": "A basic cleaning that takes care of small home maintenance",
+        "length": "30 Minutes" 
     },
     {
-        "name": "Thirty Minute Clean",
-        "description": "A cleaning that lasts thirty mintutes",
-        "length": "Thirty Minutes"
-    },
-    {
-        "name": "Fourty-Five Minute Clean",
-        "description": "A cleaning that lasts fourty-five minutes",
-        "length": "Fourty-five Minutes"
-    },
-    {
-        "name": "Hour Clean",
-        "description": "A cleaning that lasts an hour",
+        "name": "Thorough Clean",
+        "description": "A more thorough cleaning to really take care of those tough to get spots",
         "length": "One Hour"
+    },
+    {
+        "name": "Extreme Clean",
+        "description": "A high-level cleaning that will leave not just the dirt in your house, but also in your mind, to dust",
+        "length": "One Hour and 30 Minutes"
+    },
+    {
+        "name": "Is This Even My House? Clean",
+        "description": "A cleaning that will leave your house unrecognizable",
+        "length": "Two Hour"
     }
 ]

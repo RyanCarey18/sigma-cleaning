@@ -17,6 +17,8 @@ const typeDefs = gql`
     date: String!
     time: String!
     service: Service
+    unix: Int!
+    address: String!
   }
 
   type Service {
@@ -59,7 +61,9 @@ const typeDefs = gql`
       phone: String!
       date: String!
       time: String!
+      unix: Int!
       service: ID!
+      address: String!
     ): Booking
   }
 `;

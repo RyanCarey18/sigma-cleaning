@@ -429,12 +429,17 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #fc9f01;
+  text-decoration: none;
+}
+
+h1:hover {
+  color: #fc9f01;
   text-decoration: none;
 }
 
@@ -924,6 +929,10 @@ a:hover {
   color: #1b89bc !important;
 }
 
+.text-yellow {
+  color: #fc9f01 !important;
+}
+
 /* BACKGROUND UTILS */
 .bg-primary {
   background-color: #2d3e50 !important;
@@ -961,6 +970,9 @@ a:hover {
   background-color:dodgerblue;
 }
 
+.bg-dirty-blue {
+  background-color: #2d3e50;
+}
 /* DISPLAY */
 .display-none {
   display: none !important;
@@ -998,7 +1010,7 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: #cecece;
+  background-color: #fc9f01;
 }
 
 .btn.btn-squared {
@@ -1054,7 +1066,7 @@ a:hover {
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #fc9f01;
 }
 
 .btn.btn-dark {
