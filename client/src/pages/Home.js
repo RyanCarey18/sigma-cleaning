@@ -5,47 +5,44 @@ import ServiceList from "../components/ServiceList";
 
 import { QUERY_SERVICES } from "../utils/queries";
 
-import logo from '../assets/clean.png'
+import logo from "../assets/clean.png";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_SERVICES);
-  const services = data?.services || [];
 
   return (
     <main>
-       <div className="flex-row justify-center ">
+      <div className="flex-row justify-center ">
         <div className="col-12 col-md-10 my-3 text-center">
           <h3>
-          Sigma Cleaning® has been providing the world with cleaning services since 2022.
-          We offer groundbreaking methods in the world of cleaning with trained personnel that give our customers peace of mind.
+            Sigma Cleaning® has been providing the world with cleaning services
+            since 2022. We offer groundbreaking methods in the world of cleaning
+            with trained personnel that give our customers peace of mind.
           </h3>
           <h3>
-          Sigma (Σ) is the greek numeral for 200, just like how you will be 200% satisfied with Sigma Cleaning® Guaranteed.
+            Sigma (Σ) is the greek numeral for 200, just like how you will be
+            200% satisfied with Sigma Cleaning® Guaranteed.
           </h3>
+        </div>
 
-          
-          </div>
-          
-          <img src= {logo} alt="clean" />
-          
-          <div className="col-12 col-md-10 my-3 text-center">
-          <h3>
-          When you trust Sigma Cleaning®, you can count on:
-          </h3>
+        <img src={logo} alt="clean" />
+
+        <div className="col-12 col-md-10 my-3 text-center">
+          <h3>When you trust Sigma Cleaning®, you can count on:</h3>
           <ul>
             <li>0 Years of Experience</li>
             <li>Guaranteed Satisfaction</li>
             <li>Time-tested Advanced Techniques</li>
             <li>Specialized Cleaning Products</li>
           </ul>
-          </div>
+        </div>
 
-          <div className="btn-group col-12 col-md-10 my-3 card text-center display-block">
+        <div className="btn-group col-12 col-md-10 my-3 card text-center display-block">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <ServiceList
-              services={services}
+              services={data?.services || []}
               title="Here is our Selection of Great Services"
             />
           )}

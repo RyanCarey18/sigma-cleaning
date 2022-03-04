@@ -30,10 +30,20 @@ export const QUERY_SINGLE_USER = gql`
 `;
 
 export const QUERY_BOOKINGS = gql`
-  query singleUser($userId: ID!) {
-    user(userId: $userId) {
-      name
+  query getBookings {
+    bookings {
       _id
+      client
+      email
+      phone
+      date
+      time
+      service {
+        _id
+        name
+        description
+        length
+      }
     }
   }
 `;
