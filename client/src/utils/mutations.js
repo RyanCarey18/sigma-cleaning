@@ -43,6 +43,7 @@ export const ADD_BOOKING = gql`
     $time: String!
     $service: ID!
     $unix: Int!
+    $address: String!
   ) {
     addBooking(
       client: $client
@@ -52,6 +53,7 @@ export const ADD_BOOKING = gql`
       time: $time
       service: $service
       unix: $unix
+      address: $address
     ) {
       _id
     }

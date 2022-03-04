@@ -52,7 +52,7 @@ const resolvers = {
     // Adds a new booking to the database
     addBooking: async (
       parent,
-      { client, email, phone, date, time, service, unix }
+      { client, email, phone, date, time, service, unix, address }
     ) => {
       const booking = await Booking.create({
         client,
@@ -62,6 +62,7 @@ const resolvers = {
         time,
         service,
         unix,
+        address,
       });
       return booking._id;
     },

@@ -81,6 +81,14 @@ const Book = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <input
+                  className="form-input"
+                  placeholder="Address to be cleaned"
+                  name="address"
+                  type="address"
+                  value={formState.address}
+                  onChange={handleChange}
+                />
                 <label htmlFor="phone">Phone # in format: 123-456-7890</label>
                 <input
                   className="form-input"
