@@ -21,6 +21,10 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
+
+    bookings: async () => {
+      return await Booking.find().populate("service");
+    },
   },
 
   Mutation: {
