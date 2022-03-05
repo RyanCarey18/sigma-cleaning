@@ -1,4 +1,5 @@
 import React from "react";
+import Booking from "../components/Booking";
 
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -41,7 +42,15 @@ const Profile = () => {
 
   return (
     <div>
+<<<<<<< HEAD
       <h2 className="card-header">Your bookings are as follows:</h2>
+=======
+      <h2 className="card-header">
+        {userId ? `${user.name}'s` : "Your"} friends have endorsed these
+        skills...
+      </h2>
+      <Booking />
+>>>>>>> main
 
       {/* {profile.skills?.length > 0 && (
         <SkillsList

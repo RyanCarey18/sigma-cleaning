@@ -21,6 +21,10 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
+
+    bookings: async () => {
+      return await Booking.find().populate("service");
+    },
   },
 
   Mutation: {
@@ -36,13 +40,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError("No profile with this email found!");
+        throw new AuthenticationError("Incorrect Email or Password.");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect password!");
+        throw new AuthenticationError("Incorrect Email or Password.");
       }
 
       const token = signToken(user);
