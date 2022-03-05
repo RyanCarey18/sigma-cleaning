@@ -61,11 +61,9 @@ export const ADD_BOOKING = gql`
 `;
 
 export const REMOVE_BOOKING = gql`
-  mutation removeBooking($booking: String!) {
-    removeBooking(booking: $booking) {
+  mutation removeBooking($bookingId: ID!) {
+    removeBooking(bookingId: $bookingId) {
       _id
-      name
-      booking
     }
   }
 `;
