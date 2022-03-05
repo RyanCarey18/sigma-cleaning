@@ -68,7 +68,7 @@ const resolvers = {
         unix,
         address,
       });
-      return booking._id;
+      return booking;
     },
 
     removeBooking: async (parent, { bookingId }, context) => {
