@@ -81,6 +81,7 @@ const Book = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <label htmlFor="address">Street, City, state</label>
                 <input
                   className="form-input"
                   placeholder="Address to be cleaned"
@@ -105,7 +106,9 @@ const Book = () => {
                   label="Date:"
                   name="date"
                   type="date"
-                  min={new Date().toISOString().slice(0, 10)}
+                  min={new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+                    .toISOString()
+                    .slice(0, 10)}
                   value={formState.date}
                   onChange={handleDateChange}
                 />
