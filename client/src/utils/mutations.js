@@ -56,6 +56,14 @@ export const ADD_BOOKING = gql`
       address: $address
     ) {
       _id
+      email
+      phone
+      date
+      time
+      service {
+        _id
+      }
+      address
     }
   }
 `;
