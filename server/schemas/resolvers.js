@@ -23,7 +23,7 @@ const resolvers = {
     },
 
     bookings: async () => {
-      return await Booking.find().populate("service");
+      return await Booking.find().populate("service").sort({ unix: 1 });
     },
   },
 
