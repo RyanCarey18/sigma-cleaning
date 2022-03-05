@@ -38,6 +38,7 @@ export const QUERY_BOOKINGS = gql`
       phone
       date
       time
+      address
       service {
         _id
         name
