@@ -443,6 +443,11 @@ h1:hover {
   text-decoration: none;
 }
 
+.link {
+  color: dodgerblue;
+  text-decoration: none;
+}
+
 /* HEIGHT / WIDTH UTILS */
 .w-100 {
   width: 100%;

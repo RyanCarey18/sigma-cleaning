@@ -21,7 +21,7 @@ const Home = () => {
           </h3>
           <h3>
             Sigma (Σ) is the greek numeral for 200, just like how you will be
-            200% satisfied with Sigma Cleaning® Guaranteed.
+            200% satisfied with Sigma Cleaning® Guaranteed or No Money Back!
           </h3>
         </div>
 

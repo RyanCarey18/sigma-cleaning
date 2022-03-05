@@ -75,8 +75,8 @@ const Book = () => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
+                Your cleaning is booked! Click here to go{" "}
+                <Link to="/" className="link">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
