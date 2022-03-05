@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { ADD_BOOKING } from "../utils/mutations";
+import { QUERY_BOOKINGS } from "../utils/queries";
 
 const Book = () => {
   const { serviceId } = useParams();
@@ -16,7 +17,19 @@ const Book = () => {
     unix: "",
     service: serviceId,
   });
-  const [addBooking, { error, data }] = useMutation(ADD_BOOKING);
+  const [addBooking, { error, data }] = useMutation(ADD_BOOKING, {
+    update(cache, { data: { addBooking } }) {
+      try {
+        const { bookings } = cache.readQuery({ query: QUERY_BOOKINGS });
+        cache.writeQuery({
+          query: QUERY_BOOKINGS,
+          data: { bookings: [...bookings, addBooking] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -47,6 +60,8 @@ const Book = () => {
       const { data } = await addBooking({
         variables: { ...formState },
       });
+
+      setFormState("");
     } catch (e) {
       console.error(e);
     }

@@ -15,7 +15,11 @@ const BookingList = () => {
       try {
         cache.writeQuery({
           query: QUERY_BOOKINGS,
-          data: { bookings: removeBooking },
+          data: {
+            bookings: bookings.filter(
+              (booking) => removeBooking._id !== booking._id
+            ),
+          },
         });
       } catch (e) {
         console.error(e);
@@ -33,7 +37,7 @@ const BookingList = () => {
     }
   };
 
-  if (!bookings?.length) {
+  if (!data?.bookings?.length) {
     return <h3> No Bookings Yet</h3>;
   }
 
