@@ -7,7 +7,18 @@ import { REMOVE_BOOKING } from "../../utils/mutations";
 const BookingList = () => {
   const { loading, data } = useQuery(QUERY_BOOKINGS);
   const bookings = data?.bookings;
-  const [removeBooking, { error }] = useMutation(REMOVE_BOOKING);
+  const [removeBooking, { error }] = useMutation(REMOVE_BOOKING, {
+    update(cache, { data: { removeBooking } }) {
+      try {
+        cache.writeQuery({
+          query: QUERY_BOOKINGS,
+          data: { bookings: removeBooking },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
 
   const handleRemoveBooking = async (bookingId) => {
     try {
