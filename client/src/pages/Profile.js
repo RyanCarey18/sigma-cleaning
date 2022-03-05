@@ -34,30 +34,16 @@ const Profile = () => {
   if (!user?.name) {
     return (
       <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
+        You need to be logged in to see your bookings page. Use the navigation
+        links above to log in!
       </h4>
     );
   }
 
   return (
     <div>
-      <h2 className="card-header">
-        {userId ? `${user.name}'s` : "Your"} friends have endorsed these
-        skills...
-      </h2>
+      <h2 className="card-header">Your bookings are as follows:</h2>
       <Booking />
-
-      {/* {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
-          isLoggedInUser={!profileId && true}
-        />
-      )}
-
-      <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <SkillForm profileId={profile._id} /> */}
-      {/* </div> */}
     </div>
   );
 };
