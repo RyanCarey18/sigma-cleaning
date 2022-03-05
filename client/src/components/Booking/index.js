@@ -51,7 +51,8 @@ const BookingList = () => {
               <span className="mr-5" style={{ fontSize: "1rem" }}>
                 has an appointment for a {booking.service.name} on{" "}
                 {booking.date} at {booking.time}. Their address is{" "}
-                {booking.address}.
+                {booking.address}. You can contact this person at{" "}
+                {booking.phone}
               </span>
               <button
                 style={buttonStyle}
