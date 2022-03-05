@@ -70,6 +70,15 @@ const resolvers = {
       });
       return booking._id;
     },
+
+    removeBooking: async (parent, { bookingId }, context) => {
+      // if (context.user) {
+      const booking = await Booking.findOneAndDelete({ _id: bookingId });
+
+      return booking;
+    },
+    // throw new AuthenticationError("You need to be logged in!");
+    //},
   },
 };
 
