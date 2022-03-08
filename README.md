@@ -54,6 +54,8 @@ npm run seed
 
 Just clone it from our repo and then install the dependencies.
 
+Once on the page you can go to /signup to create an account which allows you to view all of the bookings
+
 ## License
 
 This application is covered under the [MIT](https://opensource.org/licenses/MIT) license.
