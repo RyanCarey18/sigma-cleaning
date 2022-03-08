@@ -11,6 +11,7 @@ import { QUERY_SINGLE_USER, QUERY_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
+//Renders the Profile of the Service Provider showing all of their booked appointments
 const Profile = () => {
   const { userId } = useParams();
 

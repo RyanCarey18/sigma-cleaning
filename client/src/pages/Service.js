@@ -5,9 +5,11 @@ import { useMutation } from "@apollo/client";
 import { ADD_BOOKING } from "../utils/mutations";
 import { QUERY_BOOKINGS } from "../utils/queries";
 
+//Renders the page that has the form for creating a service
 const Book = () => {
   const { serviceId } = useParams();
 
+  //sets the formstate empty
   const [formState, setFormState] = useState({
     client: "",
     email: "",
@@ -17,6 +19,8 @@ const Book = () => {
     unix: "",
     service: serviceId,
   });
+
+  //When the addBooking function is called it writes that to the cache of bookings
   const [addBooking, { error, data }] = useMutation(ADD_BOOKING, {
     update(cache, { data: { addBooking } }) {
       try {
@@ -41,6 +45,7 @@ const Book = () => {
     });
   };
 
+  //Update state based on form input
   const handleDateChange = (event) => {
     const { name, value } = event.target;
     const unixValue = new Date(value).getTime() / 1000;
@@ -76,10 +81,13 @@ const Book = () => {
             {data ? (
               <p>
                 Your cleaning is booked! Click here to go{" "}
-                <Link to="/" className="link">back to the homepage.</Link>
+                <Link to="/" className="link">
+                  back to the homepage.
+                </Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <label htmlFor="address">Name:</label>
                 <input
                   className="form-input"
                   placeholder="Your name"
@@ -88,6 +96,7 @@ const Book = () => {
                   value={formState.client}
                   onChange={handleChange}
                 />
+                <label htmlFor="address">Email:</label>
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -96,16 +105,19 @@ const Book = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <label htmlFor="address">Street, City, state</label>
+                <label htmlFor="address">
+                  Address format: Street, City, State
+                </label>
                 <input
                   className="form-input"
                   placeholder="Address to be cleaned"
                   name="address"
                   type="address"
+                  pattern=".+,.+,.+"
                   value={formState.address}
                   onChange={handleChange}
                 />
-                <label htmlFor="phone">Phone # in format: 123-456-7890</label>
+                <label htmlFor="phone">Phone # format: 123-456-7890</label>
                 <input
                   className="form-input"
                   placeholder="123-456-7890"

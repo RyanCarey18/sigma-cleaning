@@ -7,9 +7,12 @@ import { REMOVE_BOOKING } from "../../utils/mutations";
 const buttonStyle = {
   float: "right",
 };
+
+//Renders the list of all of the Bookings
 const BookingList = () => {
   const { loading, data } = useQuery(QUERY_BOOKINGS);
   const bookings = data?.bookings;
+  //When a booking is called it removes it from the cache as well
   const [removeBooking, { error }] = useMutation(REMOVE_BOOKING, {
     update(cache, { data: { removeBooking } }) {
       try {
@@ -74,12 +77,3 @@ const BookingList = () => {
 };
 
 export default BookingList;
-
-// const Booking = () => {
-//   const { data } = useQuery(QUERY_BOOKINGS);
-//   const bookings = data?.bookings || [];
-
-//   return (bookings = { bookings });
-// };
-
-// export default Booking;

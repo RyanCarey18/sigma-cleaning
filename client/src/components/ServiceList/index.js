@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//Renders a list of all of the services maped
 const ServiceList = ({ services, title }) => {
   if (!services.length) {
     return <h3>No Services Yet</h3>;
@@ -18,7 +19,7 @@ const ServiceList = ({ services, title }) => {
                   {service.name} <br />
                 </h3>
                 <h4 className="card-header text-light p-2 m-0">
-                {service.description} <br />
+                  {service.description} <br />
                 </h4>
 
                 <Link

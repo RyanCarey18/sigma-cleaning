@@ -7,6 +7,7 @@ import { QUERY_SERVICES } from "../utils/queries";
 
 import logo from "../assets/clean.png";
 
+//Renders the Home Screen
 const Home = () => {
   const { loading, data } = useQuery(QUERY_SERVICES);
 

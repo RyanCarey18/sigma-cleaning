@@ -22,6 +22,7 @@ const resolvers = {
       return User.findOne({ _id: userId });
     },
 
+    //query to find all Bookings sorted from newest to oldest
     bookings: async () => {
       return await Booking.find().populate("service").sort({ unix: 1 });
     },
@@ -29,6 +30,7 @@ const resolvers = {
 
   Mutation: {
     //Add a new user with name email and password
+    //Not currently in use but here for future scaling
     addUser: async (parent, { name, email, password }) => {
       const user = await User.create({ name, email, password });
       const token = signToken(user);
@@ -71,14 +73,12 @@ const resolvers = {
       return booking;
     },
 
+    //Removes a booking from the database
     removeBooking: async (parent, { bookingId }, context) => {
-      // if (context.user) {
       const booking = await Booking.findOneAndDelete({ _id: bookingId });
 
       return booking;
     },
-    // throw new AuthenticationError("You need to be logged in!");
-    //},
   },
 };
 
