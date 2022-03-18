@@ -28,15 +28,18 @@ Click [here](https://sigma-cleaning.herokuapp.com/s) to go to the deployed appli
 
 ## Technologies
 
-- React
-- MongoDB
-- Mongoose
-- GraphQl
+- React.js
+- HTML
+- JS
+- CSS
 - Express.js
 - Node.js
-- Javascript
-- HTML
-- CSS
+- GraphQL
+- MongoDB
+- Mongoose oDM
+- JWT
+- ESLint
+- Heroku
 
 ## Installation
 
