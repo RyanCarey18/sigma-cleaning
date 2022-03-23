@@ -8,7 +8,7 @@ An application that allows users to enter their requests for cleaning to take th
 
 ## Link to Deployed Site
 
-Click [here](https://sigma-cleaning.herokuapp.com/s) to go to the deployed application.
+Click [here](https://sigma-cleaning.herokuapp.com/) to go to the deployed application.
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ Click [here](https://sigma-cleaning.herokuapp.com/s) to go to the deployed appli
 - Node.js
 - GraphQL
 - MongoDB
-- Mongoose oDM
+- Mongoose ODM
 - JWT
 - ESLint
 - Heroku
